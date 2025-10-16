@@ -4,13 +4,8 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * 
- * @author Łukasz Stosik <lstosik@gmail.com>
- * @param <Value> 
- */
 public class Trie<Value> implements Map<String, Value> {
-	Node root = new Node();
+	Node<Value> root = new Node<>();
 	int size;
 
 	public Trie() {
@@ -46,7 +41,7 @@ public class Trie<Value> implements Map<String, Value> {
 		if (index == key.length()) {
 			return node.value;
 		} else {
-			Node nextNode = node.getChild(key.charAt(index));
+			Node<Value> nextNode = node.getChild(key.charAt(index));
 			if (nextNode == null) {
 				return null;
 			}
@@ -62,14 +57,12 @@ public class Trie<Value> implements Map<String, Value> {
 	
 	public void put(String key, Value value, Node<Value> node, int index) {
 		if (index == key.length()) {
-			Object oldValue = node.value;
 			node.value = value;
-			//return  oldValue;
 		} else {
 			char curChar = key.charAt(index);
-			Node nextNode = node.getChild(curChar);
+			Node<Value> nextNode = node.getChild(curChar);
 			if (nextNode == null) {
-				nextNode = new Node();
+				nextNode = new Node<>();
 				node.setChild(curChar, nextNode);
 			}
 			put(key, value, nextNode, index+1);
@@ -106,7 +99,7 @@ public class Trie<Value> implements Map<String, Value> {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 	
-	private static class Node<Value> {
+	public static class Node<Value> {
 
 		Value value = null;
 		Object[] children = new Object[256];
@@ -114,7 +107,8 @@ public class Trie<Value> implements Map<String, Value> {
 		public void setChild(int index, Node<Value> child) {
 			children[index] = child;
 		}
-		
+
+		@SuppressWarnings("unchecked")
 		public Node<Value> getChild(int index) {
 			return (Node<Value>) children[index];
 		}

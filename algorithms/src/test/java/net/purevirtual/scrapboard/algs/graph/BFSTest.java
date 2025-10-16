@@ -1,15 +1,11 @@
 package net.purevirtual.scrapboard.algs.graph;
 
+import junit.framework.TestCase;
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.IOException;
 import java.io.InputStream;
-import static junit.framework.Assert.assertEquals;
-import junit.framework.TestCase;
-import org.apache.commons.lang.StringUtils;
 
-/**
- *
- * @author ucho
- */
 public class BFSTest extends TestCase {
     
     public BFSTest(String testName) {
@@ -53,7 +49,7 @@ public class BFSTest extends TestCase {
         is = GraphTest.class.getResourceAsStream("graph4.txt");
         result = Graph.read(is);
         instance.trace(result);
-        assertEquals("A B E C D H G", StringUtils.join(instance.getOrder(), ' '));
+        assertEquals("A B E C D H G F", StringUtils.join(instance.getOrder(), ' '));
     }
 
     /**

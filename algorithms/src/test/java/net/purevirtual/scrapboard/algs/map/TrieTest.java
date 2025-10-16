@@ -5,10 +5,6 @@ import java.util.Map;
 import java.util.Set;
 import junit.framework.TestCase;
 
-/**
- *
- * @author Łukasz Stosik <lstosik@gmail.com>
- */
 public class TrieTest extends TestCase {
 	
 	public TrieTest(String testName) {

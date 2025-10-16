@@ -3,10 +3,6 @@ package net.purevirtual.scrapboard.algs.graph;
 import java.io.InputStream;
 import junit.framework.TestCase;
 
-/**
- *
- * @author ucho
- */
 public class GraphTest extends TestCase {
     
     public GraphTest(String testName) {

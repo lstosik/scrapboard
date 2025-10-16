@@ -10,10 +10,6 @@ import org.apache.commons.io.IOUtils;
 
 
 
-/**
- *
- * @author ucho
- */
 public class Graph {
     private LinkedHashMap<String, List<String>> state = new LinkedHashMap<>();
     public static Graph read(InputStream is) throws IOException {

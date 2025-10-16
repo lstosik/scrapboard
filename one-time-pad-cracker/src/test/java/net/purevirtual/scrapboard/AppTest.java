@@ -1,27 +1,15 @@
 package net.purevirtual.scrapboard;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.apache.commons.codec.DecoderException;
-import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.io.HexDump;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Unit test for simple App.
@@ -136,19 +124,7 @@ public class AppTest
                 System.out.printf("%c", s.getRaw()[i] ^ guesses[i]);
             }
 
-            System.out.println("");
-            for (int i = 0; i < s.getRaw().length; i++) {
-                //System.out.printf("%d", s.getRaw()[i] ^ guesses[i]);
-            }
-            System.out.println("");
         }
-        String x1 = "vampires at night";
-        String x2 = "vampires at morning";
-        byte[] br = Hex.decodeHex("123456aaaaa".toCharArray());
-        for(int i=0;i<br.length;i++) {
-            br[i] = (byte) (br[i]^x1.charAt(i)^x2.charAt(i));
-        }
-        System.out.println(Hex.encodeHexString(br));
     }
 
     private boolean isValidGuess(short guess, List<Sample> list, int pos) {

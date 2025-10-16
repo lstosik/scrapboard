@@ -1,21 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package net.purevirtual.scrapboard.algs.graph;
+
+import junit.framework.TestCase;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
-import static junit.framework.Assert.assertEquals;
-import junit.framework.TestCase;
-import org.apache.commons.lang.StringUtils;
 
-/**
- *
- * @author ucho
- */
 public class DFSTest extends TestCase {
     
     public DFSTest(String testName) {

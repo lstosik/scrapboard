@@ -2,7 +2,6 @@ package net.purevirtual.scrapboard.algs.map;
 
 /**
  * @url http://en.wikipedia.org/wiki/Ternary_search_tree
- * @author Łukasz Stosik <lstosik@gmail.com>
  */
 public class TernaryTrie<Value> {
 

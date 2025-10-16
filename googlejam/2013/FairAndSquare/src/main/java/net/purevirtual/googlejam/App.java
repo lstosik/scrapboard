@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Hello world!
@@ -22,7 +22,7 @@ public class App {
     List<Set<String>> generatedSum = new ArrayList<Set<String>>(500);
     private void generate(int n) {
         System.out.println("generate:"+n);
-        Set result = new HashSet();
+        Set<String>  result = new HashSet<>();
         
         generated.add(result);
         if (n==1) {
@@ -31,7 +31,7 @@ public class App {
             result.add("3");
             
             
-            Set resultSum = new HashSet();
+            Set<String> resultSum = new HashSet<>();
             resultSum.add("1");
             resultSum.add("2");
             resultSum.add("3");
@@ -50,7 +50,7 @@ public class App {
                 makeAndCheckCandidate(a,"0", result, n);
                 makeAndCheckCandidate(a,"", result, n);
             }
-            Set tmp = new HashSet(result);
+            Set<String> tmp = new HashSet<>(result);
             tmp.addAll(generatedSum.get(n-2));
             generatedSum.add(tmp);
         }
@@ -179,7 +179,7 @@ public class App {
         }
     } // end bigIntSqRootCeil
 
-    private void makeAndCheckCandidate(String a, String b, Set result, int n) {
+    private void makeAndCheckCandidate(String a, String b, Set<String> result, int n) {
         int needPad = n - (a.length() * 2 + b.length());
         if (needPad % 2 == 0) {
             String candidate = a + StringUtils.rightPad("", needPad / 2, "0") + b + StringUtils.leftPad("", needPad / 2, "0") + a;
